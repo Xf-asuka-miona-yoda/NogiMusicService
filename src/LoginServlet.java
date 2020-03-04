@@ -15,6 +15,7 @@ public class LoginServlet extends HttpServlet {
 
     public Login_validation login_validation = new Login_validation();
     public User user = new User();
+
     public LoginServlet() {
         super();
     }
@@ -57,12 +58,9 @@ public class LoginServlet extends HttpServlet {
 
         jsonArray.add(lan1);
 
-
-
         PrintWriter writer = response.getWriter();
         System.out.println(jsonArray);
         writer.print(jsonArray);
-
     }
 
     public void init() throws ServletException {
