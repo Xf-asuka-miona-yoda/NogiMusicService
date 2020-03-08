@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="260b88c4-f13a-4511-821c-493aab0a5ce1" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +78,13 @@
     </configuration>
     <configuration name="Login_validation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Login_validation" />
+      <module name="NogiMusicService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Music" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Music" />
       <module name="NogiMusicService" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,6 +172,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Music" />
         <item itemvalue="Application.User" />
         <item itemvalue="Application.Login_validation" />
         <item itemvalue="Application.JdbcUTil" />
@@ -189,6 +198,11 @@
       <workItem from="1583333249596" duration="3454000" />
       <workItem from="1583385342381" duration="1104000" />
       <workItem from="1583403150125" duration="640000" />
+      <workItem from="1583477985423" duration="1348000" />
+      <workItem from="1583561439093" duration="907000" />
+      <workItem from="1583565502323" duration="6000" />
+      <workItem from="1583565699183" duration="2158000" />
+      <workItem from="1583646758510" duration="6287000" />
     </task>
     <servers />
   </component>
