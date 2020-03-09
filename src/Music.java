@@ -5,6 +5,11 @@ public class Music {
     public String musicurl;
     public String musicpic;
     public String singer;
+    public String musicid;
+
+    public void setMusicid(String musicid) {
+        this.musicid = musicid;
+    }
 
     public void setMusicname(String musicname) {
         this.musicname = musicname;
@@ -23,6 +28,7 @@ public class Music {
     }
 
     public void getMusicbyid(int id){
+        setMusicid(String.valueOf(id));
         Connection conn = null;
         Statement stmt = null;
         Statement stmt1 = null;

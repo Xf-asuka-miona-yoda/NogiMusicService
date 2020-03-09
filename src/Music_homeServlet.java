@@ -39,6 +39,7 @@ public class Music_homeServlet extends HttpServlet {
         JSONArray jsonArray = new JSONArray();
         for (int i = 0; i < musicList.size(); i++){
             JSONObject lan1 = new JSONObject();
+            lan1.put("musicid", musicList.get(i).musicid);
             lan1.put("musicname", musicList.get(i).musicname);
             lan1.put("singer", musicList.get(i).singer);
             lan1.put("musicurl", musicList.get(i).musicurl);
