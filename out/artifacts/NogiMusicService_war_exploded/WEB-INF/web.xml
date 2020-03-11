@@ -30,7 +30,16 @@
         <servlet-name>Music_homeServlet</servlet-name>
         <url-pattern>/musichome</url-pattern>
     </servlet-mapping>
-
+    
+    <servlet>
+        <servlet-name>CollectionServlet</servlet-name>
+        <servlet-class>CollectionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CollectionServlet</servlet-name>
+        <url-pattern>/collection</url-pattern>
+    </servlet-mapping>
+    
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

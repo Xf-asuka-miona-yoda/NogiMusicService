@@ -28,10 +28,10 @@ public class Music_homeServlet extends HttpServlet {
         int realnumber = Integer.parseInt(number);
         for (int i = 0; i < realnumber; i++){
             Random random = new Random();//默认构造方法
-            int j = random.nextInt(3)+1;
+            int j = random.nextInt(6)+1;
             Music music = new Music();
             music.getMusicbyid(j);
-            System.out.println("随机数是"+j);
+            System.out.println("随机数是" + j);
             musicList.add(music);
         }
 
