@@ -40,6 +40,15 @@
         <url-pattern>/collection</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>AllsingerServlet</servlet-name>
+        <servlet-class>AllsingerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AllsingerServlet</servlet-name>
+        <url-pattern>/allsinger</url-pattern>
+    </servlet-mapping>
+    
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

@@ -9,7 +9,6 @@
     <list default="true" id="260b88c4-f13a-4511-821c-493aab0a5ce1" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/NogiMusicService_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/NogiMusicService_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Music_homeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music_homeServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,9 +48,10 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="模块" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -207,7 +207,14 @@
       <workItem from="1583646758510" duration="6904000" />
       <workItem from="1583728582089" duration="2190000" />
       <workItem from="1583753279450" duration="664000" />
-      <workItem from="1583902522791" duration="7953000" />
+      <workItem from="1583902522791" duration="8490000" />
+      <workItem from="1584019532701" duration="1783000" />
+      <workItem from="1584026323405" duration="1384000" />
+      <workItem from="1584075371714" duration="497000" />
+      <workItem from="1584080058115" duration="687000" />
+      <workItem from="1584099418646" duration="843000" />
+      <workItem from="1584110442288" duration="1039000" />
+      <workItem from="1584162630357" duration="3708000" />
     </task>
     <servers />
   </component>
