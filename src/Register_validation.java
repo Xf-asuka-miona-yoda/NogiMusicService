@@ -3,7 +3,7 @@ import java.sql.*;
 public class Register_validation {
     int result = -1; //为0表示账号冲突，为1注册成功
 
-    public int re_validation(String input_account, String input_username, String input_password, String input_age){
+    public int re_validation(String input_account, String input_username, String input_password, String input_age, String input_safe){
         int re_age = Integer.parseInt(input_age);
         Connection conn = null;
         Statement stmt = null;
@@ -19,12 +19,13 @@ public class Register_validation {
             if (!rs.next()) {
                 //rs为空时执行的内容...
                 System.out.println("可以给你插一下");
-                String sql_re = "insert into users(account,password,username,age) VALUES(?,?,?,?)";
+                String sql_re = "insert into users(account,password,username,age,safe) VALUES(?,?,?,?,?)";
                 PreparedStatement ps = conn.prepareStatement(sql_re);
                 ps.setObject(1,input_account);
                 ps.setObject(2,input_password);
                 ps.setObject(3,input_username);
                 ps.setObject(4,re_age);
+                ps.setObject(5,input_safe);
 
                 int len = ps.executeUpdate(); //()中不需要加入sql的对象参数
                 //System.out.println(len);

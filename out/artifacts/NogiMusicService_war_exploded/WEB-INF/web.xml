@@ -49,6 +49,15 @@
         <url-pattern>/allsinger</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>Findaccout</servlet-name>
+        <servlet-class>FindPasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Findaccout</servlet-name>
+        <url-pattern>/findaccount</url-pattern>
+    </servlet-mapping>
+    
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

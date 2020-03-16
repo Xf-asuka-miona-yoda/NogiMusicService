@@ -9,6 +9,8 @@
     <list default="true" id="260b88c4-f13a-4511-821c-493aab0a5ce1" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/NogiMusicService_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/NogiMusicService_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Register_validation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Register_validation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -215,6 +217,10 @@
       <workItem from="1584099418646" duration="843000" />
       <workItem from="1584110442288" duration="1039000" />
       <workItem from="1584162630357" duration="3708000" />
+      <workItem from="1584248791221" duration="1666000" />
+      <workItem from="1584267772110" duration="305000" />
+      <workItem from="1584269182110" duration="281000" />
+      <workItem from="1584336563281" duration="6571000" />
     </task>
     <servers />
   </component>

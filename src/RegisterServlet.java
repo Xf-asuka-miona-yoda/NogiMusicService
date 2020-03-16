@@ -10,6 +10,8 @@ import java.io.PrintWriter;
 
 public class RegisterServlet extends HttpServlet {
 
+    int result;
+
     public Register_validation register_validation = new Register_validation();
     public User user = new User();
 
@@ -25,10 +27,10 @@ public class RegisterServlet extends HttpServlet {
         String ResgisterUsername = request.getParameter("ResgisterUsername");
         String ResgisterPassword = request.getParameter("ResgisterPassword");
         String ResgisterAge = request.getParameter("ResgisterAge");
+        String ResgisterSafe = request.getParameter("ResgisterSafe");
 
-        System.out.println("注册账号：" + ResgisterAccount + ",注册昵称：" + ResgisterUsername + ",注册密码" + ResgisterPassword + ",注册年龄" + ResgisterAge);
-
-        int result = register_validation.re_validation(ResgisterAccount, ResgisterUsername, ResgisterPassword, ResgisterAge);
+        System.out.println("注册账号：" + ResgisterAccount + ",注册昵称：" + ResgisterUsername + ",注册密码" + ResgisterPassword + ",注册年龄" + ResgisterAge + ",安全问题" + ResgisterSafe);
+        result = register_validation.re_validation(ResgisterAccount, ResgisterUsername, ResgisterPassword, ResgisterAge, ResgisterSafe);
         if (result == 1){
             user.getuser(ResgisterAccount); //获取用户实例
         }
@@ -55,4 +57,5 @@ public class RegisterServlet extends HttpServlet {
         writer.print(jsonArray);
 
     }
+
 }
