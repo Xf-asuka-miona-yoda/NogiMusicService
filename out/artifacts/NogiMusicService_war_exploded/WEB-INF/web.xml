@@ -58,6 +58,15 @@
         <url-pattern>/findaccount</url-pattern>
     </servlet-mapping>
     
+    
+    <servlet>
+        <servlet-name>SingerMusicServlet</servlet-name>
+        <servlet-class>SingerMusicServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SingerMusicServlet</servlet-name>
+        <url-pattern>/singermusic</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
