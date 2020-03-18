@@ -67,6 +67,34 @@
         <servlet-name>SingerMusicServlet</servlet-name>
         <url-pattern>/singermusic</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>HotMusicServlet</servlet-name>
+        <servlet-class>HotMusicServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HotMusicServlet</servlet-name>
+        <url-pattern>/hotranking</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NewMusicServlet</servlet-name>
+        <servlet-class>NewMusicServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewMusicServlet</servlet-name>
+        <url-pattern>/newranking</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SoaringMusicServlet</servlet-name>
+        <servlet-class>SoaringMusicServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SoaringMusicServlet</servlet-name>
+        <url-pattern>/soaringranking</url-pattern>
+    </servlet-mapping>
+    
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
