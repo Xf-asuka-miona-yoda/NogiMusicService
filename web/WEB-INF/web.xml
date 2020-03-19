@@ -94,7 +94,16 @@
         <servlet-name>SoaringMusicServlet</servlet-name>
         <url-pattern>/soaringranking</url-pattern>
     </servlet-mapping>
-    
+
+    <servlet>
+        <servlet-name>MusicTypeServlet</servlet-name>
+        <servlet-class>MusicTypeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MusicTypeServlet</servlet-name>
+        <url-pattern>/musictype</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
