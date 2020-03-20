@@ -103,6 +103,15 @@
         <servlet-name>MusicTypeServlet</servlet-name>
         <url-pattern>/musictype</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>MycollectionServlet</servlet-name>
+        <servlet-class>MycollectionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MycollectionServlet</servlet-name>
+        <url-pattern>/mycollection</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
