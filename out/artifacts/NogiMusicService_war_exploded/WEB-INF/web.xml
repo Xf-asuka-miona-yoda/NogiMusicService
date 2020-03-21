@@ -112,6 +112,24 @@
         <servlet-name>MycollectionServlet</servlet-name>
         <url-pattern>/mycollection</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CommentServlet</servlet-name>
+        <servlet-class>CommentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CommentServlet</servlet-name>
+        <url-pattern>/comments</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>MycommentServlet</servlet-name>
+        <servlet-class>MycommentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MycommentServlet</servlet-name>
+        <url-pattern>/mycomment</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
