@@ -130,6 +130,15 @@
         <servlet-name>MycommentServlet</servlet-name>
         <url-pattern>/mycomment</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>DynamicServlet</servlet-name>
+        <servlet-class>DynamicServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DynamicServlet</servlet-name>
+        <url-pattern>/dynamic</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
