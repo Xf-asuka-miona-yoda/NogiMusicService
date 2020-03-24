@@ -139,7 +139,17 @@
         <servlet-name>DynamicServlet</servlet-name>
         <url-pattern>/dynamic</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CommitDynamicServlet</servlet-name>
+        <servlet-class>CommitDynamicServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CommitDynamicServlet</servlet-name>
+        <url-pattern>/commitdynamicservlet</url-pattern>
+    </servlet-mapping>
 
+    
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
