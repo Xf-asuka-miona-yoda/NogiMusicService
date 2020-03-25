@@ -25,33 +25,53 @@ public class DynamicServlet extends HttpServlet {
         System.out.println("查询的方式:" + method + "用户id" + userid);
 
         List<Dynamic> dynamicList = new ArrayList<>();
-        getalldynamic(dynamicList);
+        if(method.equals("all")){ //查询全部动态
+            getalldynamic(dynamicList);
+            response.setCharacterEncoding("UTF-8");
+            JSONArray jsonArray = new JSONArray();
+            for (int i = 0; i < dynamicList.size(); i++ ){
+                JSONObject lan1 = new JSONObject();
+                lan1.put("dyid", dynamicList.get(i).getDyid());
+                lan1.put("userid", dynamicList.get(i).getUserid());
+                lan1.put("username", dynamicList.get(i).getUsername());
+                lan1.put("content", dynamicList.get(i).getContent());
+                lan1.put("year", dynamicList.get(i).getYear());
+                lan1.put("month", dynamicList.get(i).getMonth());
+                lan1.put("date", dynamicList.get(i).getDate());
+                lan1.put("hour", dynamicList.get(i).getHour());
+                lan1.put("minute", dynamicList.get(i).getMinute());
+                lan1.put("second", dynamicList.get(i).getSecond());
+                lan1.put("zhuanfa", dynamicList.get(i).getZhuanfa());
+                lan1.put("pinglun", dynamicList.get(i).getPinglun());
+                lan1.put("dianzan", dynamicList.get(i).getDianzan());
+                jsonArray.add(lan1);
+            }
 
-        response.setCharacterEncoding("UTF-8");
-        JSONArray jsonArray = new JSONArray();
-        for (int i = 0; i < dynamicList.size(); i++ ){
-            JSONObject lan1 = new JSONObject();
-            lan1.put("dyid", dynamicList.get(i).getDyid());
-            lan1.put("userid", dynamicList.get(i).getUserid());
-            lan1.put("username", dynamicList.get(i).getUsername());
-            lan1.put("content", dynamicList.get(i).getContent());
-            lan1.put("year", dynamicList.get(i).getYear());
-            lan1.put("month", dynamicList.get(i).getMonth());
-            lan1.put("date", dynamicList.get(i).getDate());
-            lan1.put("hour", dynamicList.get(i).getHour());
-            lan1.put("minute", dynamicList.get(i).getMinute());
-            lan1.put("second", dynamicList.get(i).getSecond());
-            lan1.put("zhuanfa", dynamicList.get(i).getZhuanfa());
-            lan1.put("pinglun", dynamicList.get(i).getPinglun());
-            lan1.put("dianzan", dynamicList.get(i).getDianzan());
-            jsonArray.add(lan1);
+            PrintWriter writer = response.getWriter();
+            System.out.println(jsonArray);
+            writer.print(jsonArray);
+            jsonArray.clear();
+            dynamicList.clear();
+        }else if (method.equals("dianzan")){
+           int rs = dianzan(userid);
+           response.setCharacterEncoding("UTF-8");
+           JSONArray jsonArray = new JSONArray();
+           JSONObject lan1 = new JSONObject();
+           if (rs == 1){
+               lan1.put("result", "点赞成功");
+           }else if (rs == 0){
+               lan1.put("result", "点赞失败");
+           }
+
+           jsonArray.add(lan1);
+
+           PrintWriter writer = response.getWriter();
+           System.out.println(jsonArray);
+           writer.print(jsonArray);
+
         }
 
-        PrintWriter writer = response.getWriter();
-        System.out.println(jsonArray);
-        writer.print(jsonArray);
-        jsonArray.clear();
-        dynamicList.clear();
+
 
     }
 
@@ -130,5 +150,36 @@ public class DynamicServlet extends HttpServlet {
 
         }
         System.out.println("数据库操作完成");
+    }
+
+
+    public int dianzan(String id){
+        int realdyid = Integer.parseInt(id);
+        int result = 0;
+        Connection conn = null;
+        try {
+            Class.forName(JdbcUTil.JDBC_DRIVER);
+            System.out.println("连接数据库...");
+            conn = DriverManager.getConnection(JdbcUTil.DB_URL, JdbcUTil.USER, JdbcUTil.PASS);
+            System.out.println(" 实例化Statement对象...");
+            String sql_re = "update dynamic set dianzan = dianzan + 1 where id = ?";
+            PreparedStatement ps = conn.prepareStatement(sql_re);
+            ps.setObject(1,realdyid);
+            int len = ps.executeUpdate(); //()中不需要加入sql的对象参数
+            //System.out.println(len);
+            if (len > 0){
+                System.out.println("点赞成功");
+                result = 1;
+            }else {
+                System.out.println("点赞失败");
+            }
+            ps.close();
+            conn.close();
+        } catch (SQLException var23) {
+            var23.printStackTrace();
+        } catch (Exception var24) {
+            var24.printStackTrace();
+        }
+        return result;
     }
 }
