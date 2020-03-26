@@ -11,9 +11,8 @@ import java.sql.*;
 
 public class CollectionServlet extends HttpServlet {
 
-    Connection conn = null;
-    Statement stmt = null;
-    Statement stmt1 = null;
+
+
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -49,6 +48,8 @@ public class CollectionServlet extends HttpServlet {
         int result = -1;
         int realuserid = Integer.parseInt(userid);
         int realmusicid = Integer.parseInt(musicid);
+        Connection conn = null;
+        Statement stmt = null;
 
         try {
             Class.forName(JdbcUTil.JDBC_DRIVER);
@@ -56,7 +57,7 @@ public class CollectionServlet extends HttpServlet {
             conn = DriverManager.getConnection(JdbcUTil.DB_URL, JdbcUTil.USER, JdbcUTil.PASS);
             System.out.println(" 实例化Statement对象...");
             stmt = conn.createStatement();
-            stmt1 = conn.createStatement();
+            //stmt1 = conn.createStatement();
             String sql = "select * from collection where musicid ='"+realmusicid+"' and  userid = '"+realuserid+"'";
             ResultSet rs = stmt.executeQuery(sql);
 
