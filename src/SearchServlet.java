@@ -24,7 +24,10 @@ public class SearchServlet extends HttpServlet {
         String content = request.getParameter("content");
         System.out.println(method);
         JSONArray jsonArray = new JSONArray();
+
         List<HotSearch> hotSearches = new ArrayList<>();
+        List<Music> musicList = new ArrayList<>();
+
         if (method.equals("hotsearch")){
             gethotsearch(hotSearches);
             for (int i = 0; i < hotSearches.size(); i++ ){
@@ -36,6 +39,27 @@ public class SearchServlet extends HttpServlet {
             }
         }else if (method.equals("result")){
             addsearch(content);
+            getresultbysinger(content,musicList);
+            getresult(content,musicList);
+            if (musicList.size() > 0){
+                for (int i = 0; i < musicList.size();i++){
+                    JSONObject lan1 = new JSONObject();
+                    lan1.put("musicid", musicList.get(i).musicid);
+                    lan1.put("musicname", musicList.get(i).musicname);
+                    lan1.put("singer", musicList.get(i).singer);
+                    lan1.put("musicurl", musicList.get(i).musicurl);
+                    lan1.put("musicpic", musicList.get(i).musicpic);
+                    jsonArray.add(lan1);
+                }
+            }else {
+                JSONObject lan1 = new JSONObject();
+                lan1.put("musicid", -1);
+                lan1.put("musicname", "无");
+                lan1.put("singer", "无");
+                lan1.put("musicurl", "无");
+                lan1.put("musicpic", "无");
+                jsonArray.add(lan1);
+            }
         }
 
         response.setCharacterEncoding("UTF-8");
@@ -170,6 +194,65 @@ public class SearchServlet extends HttpServlet {
                 var21.printStackTrace();
             }
 
+        }
+    }
+
+
+    public void getresult(String content, List<Music> musicList){
+        Connection conn = null;
+        try {
+            Class.forName(JdbcUTil.JDBC_DRIVER);
+            System.out.println("连接数据库...");
+            conn = DriverManager.getConnection(JdbcUTil.DB_URL, JdbcUTil.USER, JdbcUTil.PASS);
+            String sql_re = "select musicid from music where musicname like ?";
+            PreparedStatement ps = conn.prepareStatement(sql_re);
+            ps.setString(1,"%" + content +"%");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                int musicid = rs.getInt("musicid");
+                Music music = new Music();
+                music.getMusicbyid(musicid);
+                musicList.add(music);
+            }
+            ps.close();
+            conn.close();
+        } catch (SQLException var23) {
+            var23.printStackTrace();
+        } catch (Exception var24) {
+            var24.printStackTrace();
+        }
+    }
+
+    public void getresultbysinger(String content, List<Music> musicList){
+        Connection conn = null;
+        try {
+            Class.forName(JdbcUTil.JDBC_DRIVER);
+            System.out.println("连接数据库...");
+            conn = DriverManager.getConnection(JdbcUTil.DB_URL, JdbcUTil.USER, JdbcUTil.PASS);
+            String sql_re = "select singerid from singer where singername like ?";
+            PreparedStatement ps = conn.prepareStatement(sql_re);
+            ps.setString(1,"%" + content +"%");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                int singerid = rs.getInt("singerid");
+                String sql_music = "select musicid from music where singerid = ?";
+                PreparedStatement ps1 = conn.prepareStatement(sql_music);
+                ps1.setInt(1,singerid);
+                ResultSet rs1 = ps1.executeQuery();
+                while (rs1.next()){
+                    int musicid = rs1.getInt("musicid");
+                    Music music = new Music();
+                    music.getMusicbyid(musicid);
+                    musicList.add(music);
+                }
+                ps1.close();
+            }
+            ps.close();
+            conn.close();
+        } catch (SQLException var23) {
+            var23.printStackTrace();
+        } catch (Exception var24) {
+            var24.printStackTrace();
         }
     }
 

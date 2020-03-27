@@ -19,13 +19,21 @@ public class Register_validation {
             if (!rs.next()) {
                 //rs为空时执行的内容...
                 System.out.println("可以给你插一下");
-                String sql_re = "insert into users(account,password,username,age,safe) VALUES(?,?,?,?,?)";
+                String sql_re = "insert into users(account,password,username,age,safe,华语流行,古风,日语流行,ACG,民谣,RAP,怀旧,儿歌) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 PreparedStatement ps = conn.prepareStatement(sql_re);
                 ps.setObject(1,input_account);
                 ps.setObject(2,input_password);
                 ps.setObject(3,input_username);
                 ps.setObject(4,re_age);
                 ps.setObject(5,input_safe);
+                ps.setInt(6,0);
+                ps.setInt(7,0);
+                ps.setInt(8,0);
+                ps.setInt(9,0);
+                ps.setInt(10,0);
+                ps.setInt(11,0);
+                ps.setInt(12,0);
+                ps.setInt(13,0);
 
                 int len = ps.executeUpdate(); //()中不需要加入sql的对象参数
                 //System.out.println(len);
