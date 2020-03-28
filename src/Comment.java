@@ -1,4 +1,5 @@
 public class Comment {
+    private String id;
     private String userid;
     private String username; //用户昵称
     private String content; //内容
@@ -8,6 +9,14 @@ public class Comment {
     private String hour;
     private String minute;
     private String second;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public void setUserid(String userid) {
         this.userid = userid;

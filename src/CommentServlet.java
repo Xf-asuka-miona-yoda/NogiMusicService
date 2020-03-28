@@ -29,6 +29,7 @@ public class CommentServlet extends HttpServlet {
         JSONArray jsonArray = new JSONArray();
         for (int i = 0; i < commentList.size(); i++ ){
             JSONObject lan1 = new JSONObject();
+            lan1.put("id",commentList.get(i).getId());
             lan1.put("userid", commentList.get(i).getUserid());
             lan1.put("username", commentList.get(i).getUsername());
             lan1.put("content", commentList.get(i).getContent());
@@ -66,6 +67,8 @@ public class CommentServlet extends HttpServlet {
             while(rs.next()) {
                 Comment comment = new Comment();
                 // 通过字段检索
+                int id = rs.getInt("id");
+                comment.setId(String.valueOf(id));
                 int userid = rs.getInt("userid");
                 comment.setUserid(String.valueOf(userid));
                 String sql_user = "select username from users where ID ='"+userid+"'";
