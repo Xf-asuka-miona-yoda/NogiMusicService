@@ -157,6 +157,15 @@
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>DyCommentServlet</servlet-name>
+        <servlet-class>DyCommentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DyCommentServlet</servlet-name>
+        <url-pattern>/dycomment</url-pattern>
+    </servlet-mapping>
 
     
     <welcome-file-list>
