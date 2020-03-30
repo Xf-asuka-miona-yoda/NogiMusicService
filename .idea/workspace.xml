@@ -10,7 +10,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/NogiMusicService_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/NogiMusicService_war_exploded/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DynamicServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DynamicServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MycommentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MycommentServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -244,7 +244,8 @@
       <workItem from="1585217651967" duration="532000" />
       <workItem from="1585284055063" duration="6569000" />
       <workItem from="1585373579412" duration="2294000" />
-      <workItem from="1585457369115" duration="5246000" />
+      <workItem from="1585457369115" duration="5601000" />
+      <workItem from="1585543197099" duration="6521000" />
     </task>
     <servers />
   </component>

@@ -166,7 +166,24 @@
         <servlet-name>DyCommentServlet</servlet-name>
         <url-pattern>/dycomment</url-pattern>
     </servlet-mapping>
-
+    
+    <servlet>
+        <servlet-name>GetoneServlet</servlet-name>
+        <servlet-class>GetoneuserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetoneServlet</servlet-name>
+        <url-pattern>/getoneuser</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CareServlet</servlet-name>
+        <servlet-class>CareServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CareServlet</servlet-name>
+        <url-pattern>/care</url-pattern>
+    </servlet-mapping>
     
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
