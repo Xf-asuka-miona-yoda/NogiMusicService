@@ -112,6 +112,33 @@ public class DynamicServlet extends HttpServlet {
             writer.print(jsonArray);
             jsonArray.clear();
             dynamicList.clear();
+        } else if (method.equals("care")){
+            getcare(dynamicList,userid);
+            response.setCharacterEncoding("UTF-8");
+            JSONArray jsonArray = new JSONArray();
+            for (int i = 0; i < dynamicList.size(); i++ ){
+                JSONObject lan1 = new JSONObject();
+                lan1.put("dyid", dynamicList.get(i).getDyid());
+                lan1.put("userid", dynamicList.get(i).getUserid());
+                lan1.put("username", dynamicList.get(i).getUsername());
+                lan1.put("content", dynamicList.get(i).getContent());
+                lan1.put("year", dynamicList.get(i).getYear());
+                lan1.put("month", dynamicList.get(i).getMonth());
+                lan1.put("date", dynamicList.get(i).getDate());
+                lan1.put("hour", dynamicList.get(i).getHour());
+                lan1.put("minute", dynamicList.get(i).getMinute());
+                lan1.put("second", dynamicList.get(i).getSecond());
+                lan1.put("zhuanfa", dynamicList.get(i).getZhuanfa());
+                lan1.put("pinglun", dynamicList.get(i).getPinglun());
+                lan1.put("dianzan", dynamicList.get(i).getDianzan());
+                jsonArray.add(lan1);
+            }
+
+            PrintWriter writer = response.getWriter();
+            System.out.println(jsonArray);
+            writer.print(jsonArray);
+            jsonArray.clear();
+            dynamicList.clear();
         }
 
 
@@ -195,6 +222,7 @@ public class DynamicServlet extends HttpServlet {
         System.out.println("数据库操作完成");
     }
 
+
     public void getone(List<Dynamic> dynamicList, String id){
         Connection conn = null;
         Statement stmt = null;
@@ -271,6 +299,93 @@ public class DynamicServlet extends HttpServlet {
         }
         System.out.println("数据库操作完成");
     }
+
+    public void getcare(List<Dynamic> dynamicList, String id){
+        Connection conn = null;
+        Statement statement = null;
+        Statement stmt = null;
+        Statement stmt1 = null;
+        try {
+            Class.forName(JdbcUTil.JDBC_DRIVER);
+            System.out.println("连接数据库...");
+            conn = DriverManager.getConnection(JdbcUTil.DB_URL, JdbcUTil.USER, JdbcUTil.PASS);
+            System.out.println(" 实例化Statement对象...");
+            stmt = conn.createStatement();
+            stmt1 = conn.createStatement();
+            statement = conn.createStatement();
+
+            String sql0 = "select idolid from care where fanid = '"+id+"'";
+            ResultSet rs0 = statement.executeQuery(sql0);
+            while (rs0.next()){
+                int idolid = rs0.getInt("idolid");
+                String sql = "select * from dynamic where userid = '"+idolid+"'";
+                ResultSet rs = stmt.executeQuery(sql);
+
+                while(rs.next()) {
+                    Dynamic dynamic = new Dynamic();
+                    // 通过字段检索
+                    int dyid = rs.getInt("id");
+                    dynamic.setDyid(String.valueOf(dyid));
+                    int userid = rs.getInt("userid");
+                    dynamic.setUserid(String.valueOf(userid));
+                    String sql_user = "select username from users where ID ='"+userid+"'";
+                    ResultSet rs1 = stmt1.executeQuery(sql_user);
+                    while(rs1.next()){
+                        String username = rs1.getString("username");
+                        System.out.println("用户: " + username);
+                        dynamic.setUsername(username);
+                    }
+                    rs1.close();
+                    String content = rs.getString("content");
+                    dynamic.setContent(content);
+                    String year = rs.getString("year");
+                    dynamic.setYear(year);
+                    String month = rs.getString("month");
+                    dynamic.setMonth(month);
+                    String day = rs.getString("day");
+                    dynamic.setDate(day);
+                    String hour = rs.getString("hour");
+                    dynamic.setHour(hour);
+                    String minute = rs.getString("minute");
+                    dynamic.setMinute(minute);
+                    String second = rs.getString("second");
+                    dynamic.setSecond(second);
+                    int zhuanfa = rs.getInt("zhuanfa");
+                    dynamic.setZhuanfa(String.valueOf(zhuanfa));
+                    int pinglun = rs.getInt("pinglun");
+                    dynamic.setPinglun(String.valueOf(pinglun));
+                    int dianzan = rs.getInt("dianzan");
+                    dynamic.setDianzan(String.valueOf(dianzan));
+                    dynamicList.add(0,dynamic);
+                }
+                rs.close();
+            }
+            rs0.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException var23) {
+            var23.printStackTrace();
+        } catch (Exception var24) {
+            var24.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException var22) {
+            }
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException var21) {
+                var21.printStackTrace();
+            }
+
+        }
+        System.out.println("数据库操作完成");
+    }
+
 
 
     public int dianzan(String id){
