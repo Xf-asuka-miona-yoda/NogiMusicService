@@ -185,6 +185,15 @@
         <url-pattern>/care</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>HistoryServlet</servlet-name>
+        <servlet-class>HistoryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HistoryServlet</servlet-name>
+        <url-pattern>/history</url-pattern>
+    </servlet-mapping>
+    
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
