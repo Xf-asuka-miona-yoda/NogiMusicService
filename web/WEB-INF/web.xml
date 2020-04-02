@@ -194,6 +194,24 @@
         <url-pattern>/history</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>CoComment</servlet-name>
+        <servlet-class>CoCommentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CoComment</servlet-name>
+        <url-pattern>/cocomment</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ReplyServlet</servlet-name>
+        <servlet-class>ReplyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReplyServlet</servlet-name>
+        <url-pattern>/reply</url-pattern>
+    </servlet-mapping>
+    
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
