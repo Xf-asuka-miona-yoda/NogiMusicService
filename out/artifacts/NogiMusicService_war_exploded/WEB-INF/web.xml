@@ -211,7 +211,16 @@
         <servlet-name>ReplyServlet</servlet-name>
         <url-pattern>/reply</url-pattern>
     </servlet-mapping>
-    
+
+    <servlet>
+        <servlet-name>MymessgeServlet</servlet-name>
+        <servlet-class>MymessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MymessgeServlet</servlet-name>
+        <url-pattern>/message</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
