@@ -220,6 +220,15 @@
         <servlet-name>MymessgeServlet</servlet-name>
         <url-pattern>/message</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>MyhistoryServlet</servlet-name>
+        <servlet-class>MyhistoryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyhistoryServlet</servlet-name>
+        <url-pattern>/myhistory</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
