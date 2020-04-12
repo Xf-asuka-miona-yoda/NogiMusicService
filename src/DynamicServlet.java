@@ -139,10 +139,9 @@ public class DynamicServlet extends HttpServlet {
             writer.print(jsonArray);
             jsonArray.clear();
             dynamicList.clear();
+        } else if (method.equals("zhuanfa")){
+            zhuanfa(userid);
         }
-
-
-
     }
 
     public void getalldynamic(List<Dynamic> dynamicList){
@@ -447,4 +446,35 @@ public class DynamicServlet extends HttpServlet {
         }
         return result;
     }
+
+    public int zhuanfa(String id){
+        int realdyid = Integer.parseInt(id);
+        int result = 0;
+        Connection conn = null;
+        try {
+            Class.forName(JdbcUTil.JDBC_DRIVER);
+            System.out.println("连接数据库...");
+            conn = DriverManager.getConnection(JdbcUTil.DB_URL, JdbcUTil.USER, JdbcUTil.PASS);
+            System.out.println(" 实例化Statement对象...");
+            String sql_re = "update dynamic set zhuanfa = zhuanfa + 1 where id = ?";
+            PreparedStatement ps = conn.prepareStatement(sql_re);
+            ps.setObject(1,realdyid);
+            int len = ps.executeUpdate(); //()中不需要加入sql的对象参数
+            //System.out.println(len);
+            if (len > 0){
+                System.out.println("点赞成功");
+                result = 1;
+            }else {
+                System.out.println("点赞失败");
+            }
+            ps.close();
+            conn.close();
+        } catch (SQLException var23) {
+            var23.printStackTrace();
+        } catch (Exception var24) {
+            var24.printStackTrace();
+        }
+        return result;
+    }
+
 }

@@ -8,8 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="260b88c4-f13a-4511-821c-493aab0a5ce1" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NogiMusicService_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/NogiMusicService_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DynamicServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DynamicServlet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -249,7 +248,9 @@
       <workItem from="1585792884901" duration="7215000" />
       <workItem from="1585878566985" duration="10800000" />
       <workItem from="1585975820050" duration="4726000" />
-      <workItem from="1586139423651" duration="3422000" />
+      <workItem from="1586139423651" duration="4025000" />
+      <workItem from="1586569532824" duration="1523000" />
+      <workItem from="1586664183104" duration="1060000" />
     </task>
     <servers />
   </component>
