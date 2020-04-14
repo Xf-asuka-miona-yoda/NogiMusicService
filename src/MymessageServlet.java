@@ -92,7 +92,7 @@ public class MymessageServlet extends HttpServlet {
 
                 String time = year + "-" + month + "-" + day + "  " + hour + ":" + minute + ":" + second;
 
-                String sql_dy = "select * from dycomment where dynamicid = ? and userid != ?"; //根据之前查到的动态id查找评论
+                String sql_dy = "select * from dycomment where dynamicid = ? and userid != ?"; //根据之前查到的动态id查找非自己的评论
                 PreparedStatement ps1 = conn.prepareStatement(sql_dy);
                 ps1.setObject(1,dyid);
                 ps1.setObject(2,userid);
@@ -172,7 +172,7 @@ public class MymessageServlet extends HttpServlet {
 
                 String time = year + "-" + month + "-" + day + "  " + hour + ":" + minute + ":" + second;
 
-                String sql_dy = "select * from cocomment where commentid = ? and userid != ?"; //根据之前查到的评论id查找评论
+                String sql_dy = "select * from cocomment where commentid = ? and userid != ?"; //根据之前查到的评论id查找非自己的评论
                 PreparedStatement ps1 = conn.prepareStatement(sql_dy);
                 ps1.setObject(1,coid);
                 ps1.setObject(2,userid);
@@ -237,7 +237,7 @@ public class MymessageServlet extends HttpServlet {
             System.out.println(" 实例化Statement对象...");
             String sql = "select * from reply where replyid = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setObject(1,userid); //先查询用户被评论了吗
+            ps.setObject(1,userid); //先查询用户被回复了吗
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
                 int dycommentid = rs.getInt("dycommentid"); //在哪一条动态评论下回复的

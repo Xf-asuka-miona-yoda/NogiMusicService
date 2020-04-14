@@ -8,7 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="260b88c4-f13a-4511-821c-493aab0a5ce1" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DynamicServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DynamicServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Music_homeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music_homeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MymessageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MymessageServlet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,6 +99,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserScore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UserScore" />
+      <module name="NogiMusicService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.30" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.30" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/NogiMusic/" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -173,6 +181,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UserScore" />
         <item itemvalue="Application.Music" />
         <item itemvalue="Application.User" />
         <item itemvalue="Application.Login_validation" />
@@ -250,7 +259,9 @@
       <workItem from="1585975820050" duration="4726000" />
       <workItem from="1586139423651" duration="4025000" />
       <workItem from="1586569532824" duration="1523000" />
-      <workItem from="1586664183104" duration="1060000" />
+      <workItem from="1586664183104" duration="1655000" />
+      <workItem from="1586752430707" duration="1376000" />
+      <workItem from="1586838834789" duration="7151000" />
     </task>
     <servers />
   </component>
