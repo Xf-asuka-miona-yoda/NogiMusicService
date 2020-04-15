@@ -30,9 +30,22 @@ public class UserScore {
     private double huaijiuscore;
     private double ergescore;
 
+    private double similarity;
+
+    public int getUserid() {
+        return userid;
+    }
 
     public void setUserid(int id){
         this.userid = id;
+    }
+
+    public void setSimilarity(double similarity) {
+        this.similarity = similarity;
+    }
+
+    public double getSimilarity() {
+        return similarity;
     }
 
     /**
@@ -73,6 +86,7 @@ public class UserScore {
                 huaijiu = resultSet.getInt("怀旧");
                 erge = resultSet.getInt("儿歌");
             }
+            resultSet.close();
             preparedStatement.close();
             conn.close();
         } catch (SQLException var23) {
@@ -121,6 +135,7 @@ public class UserScore {
         double fenmu = ziji * duifang;
         System.out.println("分子: " + fenzi + " 分母: " + fenmu);
         double result = fenzi/fenmu;
+        userScore.setSimilarity(result);
         return result;
     }
 
@@ -128,6 +143,11 @@ public class UserScore {
         System.out.println("数量: " + huayu + " " + gufeng + " " + riyu + " " + acg + " " + minyao + " " + rap + " " + huaijiu + " " + erge);
         System.out.println("得分：" + huayuscore + " " + gufengscore + " " + riyuscore + " " + acgscore + " " + minyaoscore + " " + rapscore + " " + huaijiuscore + " " + ergescore);
     }
+
+    public void showsimilarity(){
+        System.out.println("相似度为： " + similarity);
+    }
+
 
     public static void main(String[] args){
         UserScore userScore = new UserScore();
@@ -144,6 +164,7 @@ public class UserScore {
 
         double s = userScore.calculatesimilarity(userScore1);
         System.out.println("相似度为： " + s);
+        userScore1.showsimilarity();
     }
 
 }

@@ -8,8 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="260b88c4-f13a-4511-821c-493aab0a5ce1" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Music_homeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music_homeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MymessageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MymessageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserScore.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,14 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.30">
-    <configuration name="JdbcUTil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JdbcUTil" />
-      <module name="NogiMusicService" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Recommend">
     <configuration name="Login_validation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Login_validation" />
       <module name="NogiMusicService" />
@@ -87,6 +79,13 @@
     </configuration>
     <configuration name="Music" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Music" />
+      <module name="NogiMusicService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Recommend" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Recommend" />
       <module name="NogiMusicService" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -181,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Recommend" />
         <item itemvalue="Application.UserScore" />
         <item itemvalue="Application.Music" />
         <item itemvalue="Application.User" />
         <item itemvalue="Application.Login_validation" />
-        <item itemvalue="Application.JdbcUTil" />
       </list>
     </recent_temporary>
   </component>
@@ -261,7 +260,8 @@
       <workItem from="1586569532824" duration="1523000" />
       <workItem from="1586664183104" duration="1655000" />
       <workItem from="1586752430707" duration="1376000" />
-      <workItem from="1586838834789" duration="7151000" />
+      <workItem from="1586838834789" duration="7425000" />
+      <workItem from="1586915190099" duration="4794000" />
     </task>
     <servers />
   </component>
