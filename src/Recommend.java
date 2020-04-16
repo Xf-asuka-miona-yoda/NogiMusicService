@@ -8,9 +8,9 @@ public class Recommend {
     private int userid;
     private UserScore ziji = new UserScore();
 
-    private List<UserScore> Adjacentuserilist = new ArrayList<>();
+    private List<UserScore> Adjacentuserilist = new ArrayList<>(); //邻用户
 
-    private List<Music> musicList = new ArrayList<>();
+    private List<Music> musicList = new ArrayList<>(); //推荐歌曲
 
 
     public void getmusic(List<Music> musicList1){
@@ -50,7 +50,7 @@ public class Recommend {
 
 
 
-    public void getadjacent(){
+    public void getadjacent(){  //获取邻用户
         Connection conn = null;
         try {
             Class.forName(JdbcUTil.JDBC_DRIVER);
@@ -87,7 +87,7 @@ public class Recommend {
     }
 
 
-    public void calculatesimilarity(){ // 计算邻用户的相似度
+    public void calculatesimilarity(){ // 计算邻用户的相似度,并按照相似度顺序排序
         for (int i = 0; i < Adjacentuserilist.size(); i++){
             ziji.calculatesimilarity(Adjacentuserilist.get(i));
             Adjacentuserilist.get(i).showsimilarity();
@@ -107,14 +107,79 @@ public class Recommend {
         });
     }
 
+    public void getrecommendmusic(){
+        for (int i = 0; i < Adjacentuserilist.size(); i++){
+            if (i == 5){
+                break;
+            }
+
+            getcollection(Adjacentuserilist.get(i).getUserid());
+        }
+
+        for (int i = 0; i < musicList.size(); i++){  //去掉重复的历史记录
+            for (int j = musicList.size() - 1; j > i ; j--){
+                if (musicList.get(j).musicid.equals(musicList.get(i).musicid)){
+                    musicList.remove(j);
+                }
+            }
+        }
+    }
+
+    public void getcollection(int realuserid){ //获取用户的收藏歌曲
+
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            Class.forName(JdbcUTil.JDBC_DRIVER);
+            System.out.println("连接数据库...");
+            conn = DriverManager.getConnection(JdbcUTil.DB_URL, JdbcUTil.USER, JdbcUTil.PASS);
+            System.out.println(" 实例化Statement对象...");
+            stmt = conn.createStatement();
+            String sql = "select * from collection where userid ='"+realuserid+"'";
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()) {
+                int musicid = rs.getInt("musicid");
+                Music music = new Music();
+                music.getMusicbyid(musicid);
+                musicList.add(music);
+                // 输出数据
+                System.out.println("歌曲id"+ musicid);
+            }
+
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException var23) {
+            var23.printStackTrace();
+        } catch (Exception var24) {
+            var24.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException var22) {
+            }
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException var21) {
+                var21.printStackTrace();
+            }
+        }
+
+    }
+
 
     public static void main(String[] args){
         Recommend recommend = new Recommend(9);
-        recommend.getadjacent();
-        recommend.adjacentgetdata();
-        recommend.showadjacent();
-        recommend.calculatesimilarity();
-        recommend.showadjacent();
+        recommend.getadjacent();  //获取邻用户
+        recommend.adjacentgetdata(); //计算邻用户的得分情况
+        recommend.showadjacent();  //输出看看
+        recommend.calculatesimilarity(); //计算邻用户的相似度并排序
+        recommend.showadjacent(); //再看看
+        recommend.getrecommendmusic(); //拿到推荐歌曲
     }
 
 

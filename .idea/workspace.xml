@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="260b88c4-f13a-4511-821c-493aab0a5ce1" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recommend.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Recommend">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.30">
     <configuration name="Login_validation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Login_validation" />
       <module name="NogiMusicService" />
@@ -261,7 +261,9 @@
       <workItem from="1586664183104" duration="1655000" />
       <workItem from="1586752430707" duration="1376000" />
       <workItem from="1586838834789" duration="7425000" />
-      <workItem from="1586915190099" duration="4794000" />
+      <workItem from="1586915190099" duration="5397000" />
+      <workItem from="1587004064274" duration="5184000" />
+      <workItem from="1587021299872" duration="1255000" />
     </task>
     <servers />
   </component>
