@@ -13,7 +13,7 @@ public class Recommend {
     private List<Music> musicList = new ArrayList<>(); //推荐歌曲
 
 
-    public void getmusic(List<Music> musicList1){
+    public void getmusic(List<Music> musicList1){  //获取到音乐
         musicList1.addAll(musicList);
     }
 
@@ -112,7 +112,6 @@ public class Recommend {
             if (i == 5){
                 break;
             }
-
             getcollection(Adjacentuserilist.get(i).getUserid());
         }
 

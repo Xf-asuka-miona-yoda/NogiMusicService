@@ -229,6 +229,15 @@
         <servlet-name>MyhistoryServlet</servlet-name>
         <url-pattern>/myhistory</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>RecommendServlet</servlet-name>
+        <servlet-class>RecommendServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RecommendServlet</servlet-name>
+        <url-pattern>/recommend</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
