@@ -8,7 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="260b88c4-f13a-4511-821c-493aab0a5ce1" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Music_homeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music_homeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recommend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RecommendServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RecommendServlet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -264,7 +266,8 @@
       <workItem from="1586915190099" duration="5397000" />
       <workItem from="1587004064274" duration="5184000" />
       <workItem from="1587021299872" duration="1255000" />
-      <workItem from="1587100209917" duration="1385000" />
+      <workItem from="1587100209917" duration="4415000" />
+      <workItem from="1587176813203" duration="3301000" />
     </task>
     <servers />
   </component>

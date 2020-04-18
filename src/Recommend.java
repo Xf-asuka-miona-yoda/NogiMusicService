@@ -1,8 +1,5 @@
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Recommend {
     private int userid;
@@ -14,7 +11,20 @@ public class Recommend {
 
 
     public void getmusic(List<Music> musicList1){  //获取到音乐
-        musicList1.addAll(musicList);
+        //musicList1.addAll(musicList);
+        for (int i = 0; i < 15; i++){
+            Random random = new Random();//默认构造方法
+            int j = random.nextInt(musicList.size());
+            musicList1.add(musicList.get(j));
+        }
+
+        for (int i = 0; i < musicList1.size(); i++){  //去掉重复的推荐
+            for (int j = musicList1.size() - 1; j > i ; j--){
+                if (musicList1.get(j).musicid.equals(musicList1.get(i).musicid)){
+                    musicList1.remove(j);
+                }
+            }
+        }
     }
 
     public Recommend(int id){

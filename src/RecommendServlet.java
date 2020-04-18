@@ -48,7 +48,6 @@ public class RecommendServlet extends HttpServlet {
             jsonArray.add(lan1);
         }
 
-
         PrintWriter writer = response.getWriter();
         System.out.println(jsonArray);
         writer.print(jsonArray);
