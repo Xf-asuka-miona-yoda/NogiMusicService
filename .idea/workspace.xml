@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="260b88c4-f13a-4511-821c-493aab0a5ce1" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Music_homeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music_homeServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recommend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RecommendServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RecommendServlet.java" afterDir="false" />
     </list>
@@ -72,8 +71,8 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.30">
-    <configuration name="Login_validation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Login_validation" />
+    <configuration name="AgeRecommend" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AgeRecommend" />
       <module name="NogiMusicService" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AgeRecommend" />
         <item itemvalue="Application.Recommend" />
         <item itemvalue="Application.UserScore" />
         <item itemvalue="Application.Music" />
         <item itemvalue="Application.User" />
-        <item itemvalue="Application.Login_validation" />
       </list>
     </recent_temporary>
   </component>
@@ -267,7 +266,8 @@
       <workItem from="1587004064274" duration="5184000" />
       <workItem from="1587021299872" duration="1255000" />
       <workItem from="1587100209917" duration="4415000" />
-      <workItem from="1587176813203" duration="3301000" />
+      <workItem from="1587176813203" duration="3468000" />
+      <workItem from="1587272325491" duration="3547000" />
     </task>
     <servers />
   </component>

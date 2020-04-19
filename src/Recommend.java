@@ -66,26 +66,31 @@ public class Recommend {
             Class.forName(JdbcUTil.JDBC_DRIVER);
             System.out.println("连接数据库...");
             conn = DriverManager.getConnection(JdbcUTil.DB_URL, JdbcUTil.USER, JdbcUTil.PASS);
-            System.out.println(" 实例化Statement对象...");
+            System.out.println(" 在获取邻用户啦...");
             String sql = "select * from collection where userid= ?";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setObject(1,this.userid);
             ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()){
-                int musicid = resultSet.getInt("musicid");
-                String sql1 = "select * from collection where musicid= ? and userid != ?";
-                PreparedStatement ps = conn.prepareStatement(sql1);
-                ps.setObject(1,musicid);
-                ps.setObject(2,this.userid);
-                ResultSet rs = ps.executeQuery();
-                while (rs.next()){
-                    int id = rs.getInt("userid");
-                    UserScore userScore = new UserScore();
-                    userScore.setUserid(id);
-                    Adjacentuserilist.add(userScore);
+            if (!resultSet.next()){
+                return;
+            }else {
+                while (resultSet.next()){
+                    int musicid = resultSet.getInt("musicid");
+                    String sql1 = "select * from collection where musicid= ? and userid != ?";
+                    PreparedStatement ps = conn.prepareStatement(sql1);
+                    ps.setObject(1,musicid);
+                    ps.setObject(2,this.userid);
+                    ResultSet rs = ps.executeQuery();
+                    while (rs.next()){
+                        int id = rs.getInt("userid");
+                        UserScore userScore = new UserScore();
+                        userScore.setUserid(id);
+                        Adjacentuserilist.add(userScore);
+                    }
+                    rs.close();
                 }
-                rs.close();
             }
+
             resultSet.close();
             preparedStatement.close();
             conn.close();
