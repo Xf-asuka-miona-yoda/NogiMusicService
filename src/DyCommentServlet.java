@@ -92,7 +92,7 @@ public class DyCommentServlet extends HttpServlet {
                 comment.setMinute(minute);
                 String second = rs.getString("second");
                 comment.setSecond(second);
-                commentList.add(comment);
+                commentList.add(0,comment);
             }
             rs.close();
             stmt.close();
